@@ -1,0 +1,76 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build FlappyBird Pro",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "main.cpp",
+                "Game.cpp",
+                "Game_render.cpp",
+                "Game_init.cpp",
+                "Bird.cpp",
+                "Pipe.cpp",
+                "-I${workspaceFolder}/SFML/include",
+                "-L${workspaceFolder}/SFML/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-audio",
+                "-lsfml-system",
+                "-o",
+                "FlappyBirdPro.exe",
+                "-mwindows"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build & Run FlappyBird Pro",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "main.cpp",
+                "Game.cpp",
+                "Game_render.cpp",
+                "Game_init.cpp",
+                "Bird.cpp",
+                "Pipe.cpp",
+                "-I${workspaceFolder}/SFML/include",
+                "-L${workspaceFolder}/SFML/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-audio",
+                "-lsfml-system",
+                "-o",
+                "FlappyBirdPro.exe",
+                "-mwindows",
+                "&&",
+                ".\\FlappyBirdPro.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
